@@ -1,0 +1,9 @@
+ext {
+    versions = [
+            lottieVersion : "3.2.2"
+    ]
+
+    dependencies = [
+            lottieLib   : "com.airbnb.android:lottie:$versions.lottieVersion"
+    ]
+}
