@@ -7,12 +7,67 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/tv_display_text"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="显示区"
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_anim"
+        app:layout_constraintTop_toBottomOf="@id/tv_display_text"
+        app:layout_constraintBottom_toTopOf="@id/tv_control_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_control_text"
+        app:layout_constraintBottom_toTopOf="@+id/scroll_control"
+        android:text="控制区"
+        android:textSize="18dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_control"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <LinearLayout
+            android:id="@+id/ll_control"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/start"
+                android:text="开始"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/pause"
+                android:text="暂停"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/resume"
+                android:text="恢复"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
